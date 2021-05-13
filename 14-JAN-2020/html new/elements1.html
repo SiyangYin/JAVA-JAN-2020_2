@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>
+My first program
+</title>
+<Script type="text/javascript">
+function count()
+{
+alert("the number of element in the form:"+document.myform.length );
+}
+</script>
+</head>
+<body bgcolor="cyan">
+<h1>welcome to my web lab</h1>
+<form name="myform">
+<pre>
+Name:<input type="textbox" name="txtname" value=""/><br>
+Class:<input type="textbox" name="txtclass" value=""/><br>
+<b>Gender</b>
+Male<input type="radio" name="rad1" value="rad_male/"><br>
+Female<input type="radio" name="rad2" value="rad_female/"><br>
+<b>Education</b>
+under graduate<input type="checkbox" name="check1" value="ckeck_ug /"><br>
+post graduate<input type="checkbox" name="check2" value="ckeck_pg/"><br>
+<input type="button" value="submit" onclick="count()"/>
+</pre>
+</form>
+</body>
+<html>

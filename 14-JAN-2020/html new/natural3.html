@@ -1,0 +1,24 @@
+<html>
+<head>
+<title> sum of N natural numbers </title>
+<script type="text/javascript">
+var num,n,s=0;
+num=window.prompt("enter a number" , "0");
+n=parseInt (num);
+if(n<=0)
+{
+alert("enter a positive number");
+}
+document.write("<h1><center> sum of "+n+" natural number is ");
+findsum(n);
+document.write(s+"</center></h1>");
+function findsum(n)
+{
+for(var i=0;i<=n;i++)
+s=s+i;
+}
+</script>
+</head>
+<body bgcolor="powderblue">
+</body>
+</html>

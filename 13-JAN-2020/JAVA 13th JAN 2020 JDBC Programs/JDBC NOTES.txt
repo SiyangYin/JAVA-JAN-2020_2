@@ -1,0 +1,146 @@
+J2EE--- JAVA 2 ENTERPRISE EDITION
+
+TECHNOLOGY
+3 TYPES
+
+1. JDBC
+2. SERVLET
+3. JSP
+
+
+JDBC(JAVA DATABASE CONNECTIVITY)
+---------------------------------------------------------
+
+FRONT END(JAVA APPLICATION)  WILL BE CONNECTING TO BACK END(DATABASE).
+
+ODBC (OPEN DATABASE CONNECTIVITY)--- C LANGUAGE (SECURITY IS LESS)
+JDBC( JAVA )
+
+API (APPLICATION PROGRAMMING INTERFACE):
+-----------------------------------------------------------------------
+2 API's
+
+1. CORE API
+
+import java.sql.*;
+(Structured Query Languange)
+2. ADVANCED API
+
+import javax.sql.*;
+
+DATABASE:
+-----------------
+
+TO STORE THE DATA EITHER STATICALLY OR DYNAMICALLY.
+
+2 DATABASES
+
+1. FILE LEVEL DATABASE
+-------------------------------------
+WHICH DOESN'T CONTAINS USERNAME AND PASSWORD
+UNSECURE DATABASE
+EX:  MS ACCESS, MS EXCEL
+
+2. CENTRALIZED DATABASE
+-------------------------------------
+WHICH CONTAINS USERNAME AND PASSWORD
+SECURE DATABASE
+EX: ORACLE XE(10g), MYSQL, MS SQL SERVER
+
+DRIVERMANAGER:
+----------------------------
+IT IS USED TO MANAGE ALL THE DRIVERS (VERIFY WHETHER THE DRIVER IS MATCHING WITH THE DATABASE OR NOT).
+
+DRIVER TYPES:
+-----------------------
+IN REALTIME 220+ DRIVERS
+
+4 DRIVERS
+1. TYPE I (NATIVE DRIVER)----->sun.jdbc.odbc.JdbcOdbcDriver
+2. TYPE II (BRIDGE DRIVER)------>oracle.jdbc.driver.OracleDriver(8i & 9i)
+3. TYPE III (NETWORK PROTOCOL DRIVER)---J2ME
+4. TYPE IV (PURE DRIVER OR THIN DRIVER)---- Supports MYSQL 8.0 DATABASE--->com.mysql.cj.jdbc.Driver
+
+ARCHITECTURE TYPES:
+-------------------------------------
+1. 2-tier
+2. 3-tier
+3. n-tier
+
+STEPS TO EXECUTE JDBC APPLICATION:
+-------------------------------------------------------------
+
+1. LOADING & REGISTERING THE DRIVER:
+-------------------------------------------------------------
+
+ Class.forName(" Driver Name");
+
+Ex: Class.forName("com.mysql.cj.jdbc.Driver");
+
+2.  CONNECTION ESTABLISHMENT:
+---------------------------------------------------
+
+Connection con=DriverManager.getConnection("Driver URL","username","password");
+
+Ex:  Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/xyz","root","root");
+
+3. PERFORMING DB OPERATIONS:
+--------------------------------------------------
+
+a.) STATEMENT:
+-----------------------
+
+3 TYPES
+
+i.)  SIMPLE STATEMENT
+----------------------------------
+ONE QUERY WILL BE EXECUTED ONLY ONCE
+
+Ex: Statement st=con.createStatement();
+
+ii.)  PREPARED STATEMENT
+---------------------------------------
+ONE QUERY WILL BE EXECUTED MULTIPLE TIMES BY GIVING DIFFERENT DYNAMIC VALUES
+
+Ex: PreparedStatement st=con.prepareStatement(?,?);
+
+iii.) CALLABLE STATEMENT
+---------------------------------------
+WE CAN EXECUTE GROUP OF QUERIES AT A TIME
+
+Ex: CallableStatement st=con.prepareCall(" create a procedure");
+
+1.) DDL (DATA DEFINATION LANGUAGE) ------- CREATE,ALTER,DROP
+2.) DML (DATA MANIPULATION LANGUAGE)------- INSERT,UPDATE,DELETE
+3.) DQL(DATA QUERY LANGUAGE)------ SELECT
+4.) TCL(TRANSACTION CONTROL LANGUAGE)----- GRANT,REVOKE 
+
+Methods:
+-------------
+3 TYPES
+
+i.) execute(): It will execute  DDL & DML  AND RETURNS INTEGER VALUE AS RESULT
+
+ii.) executeUpdate(): It will execute  DDL & DML  AND RETURNS BOOLEAN VALUE AS RESULT
+
+iii.) executeQuery(): It will execute DQL (select)
+
+
+b.) ResultSet:
+-----------------
+
+IT IS AN INTERFACE WHICH EXECUTES THE RESULT WHICH WILL BE IN THE FORM OF TABLE(ROWS & COLUMNS).
+
+Ex: ResultSet rs= st.executeQuery("select * from emp");
+
+4. CLOSING CONNECTION:
+-----------------------------------------
+
+Ex: con.close();
+
+
+
+
+
+
+

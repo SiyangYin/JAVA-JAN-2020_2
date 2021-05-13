@@ -1,0 +1,7 @@
+We have received a coding challenge from one of the vendors as below:
+
+Write an REST based API using API Gateway which takes name, email, password in JSON format from HTTP POST.
+
+Calls a LAMBDA function which validates the format of that data and stores that in DB of your choice. Preferable
+
+Dynamo DB / Redis / MongoDB

@@ -1,0 +1,42 @@
+Servlet is a Server side Technology
+It will support Thread based Components
+Two Packages:
+-------------------
+1. import javax.servlet.*;
+2. import javax.servlet.http.*;
+
+Life Cycle Stages:
+------------------------
+1. init()
+2. service()
+3. destroy()
+
+Servlet Architecture Flow:
+---------------------------------
+
+1. It is the communication between Web Client(User) and Web Server.
+2. Inside Web Server, it will have Web Container.
+3. By using init(), Web Container will initialise the request which came from the client(Web User).
+4. Web Container will create one Thread Internally, By using service(), Web Server will process the response.
+5. After sending Response to the Web User, For killing of the Thread we will use destroy().
+
+3 types of Servlet:
+----------------------
+1. Servlet(Interface)----init(),service(),destroy()
+2. Generic Servlet(Abstract Class)---service()
+3. HTTP Servlet(class)---service()--doGet(),doPost()
+
+Files in Java:
+-----------------
+1.) .java, .class
+2.) .html, .jsp, .css, .js
+3.) web.xml
+
+        doGet()                                 doPost()
+--------------------------              ----------------------------
+1.) Security is Less.                   1.) Security will be More.
+2.) Limited amount of Data.             2.) Unlimited Amount of Data.
+
+
+
+

@@ -1,0 +1,26 @@
+Implement a Web Cache in a Web application in the following approaches:
+
+1. Lazy load of cache data
+
+1.1 Accept a HTTP request from browser
+1.2 Check on the server side for cache data
+1.3 For 1st time requests, as there will be no cache data, hit the DB, get the data & form a Cache object and then seve the response
+1.4 From next request onwards, check for cache and server from cache
+
+2. Eager load of cache data
+
+2.1 Create a Cache data on bootstrap of your web application
+2.2 When the first HTTP request comes in, you must already have a cache data and serve the request
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,125 @@
+- VPC
+- Subnet
+	- Public
+	- Private
+- Route Table
+- IGW
+- NAT Instance
+
+1. Create VPC
+
+VPC Name
+CIDR Block - 10.0.0.0/16
+Default
+
+2. Public Subnet - 1
+
+Name
+VPC - Custom VPC
+AZ - 2a
+CIDR - 10.0.1.0/24
+
+3. Public Subnet - 2
+
+Name
+VPC - Custom VPC
+AZ - 2b
+CIDR - 10.0.3.0/24
+
+4. Private Subnet - 3
+
+Name
+VPC - Custom VPC
+AZ - 2b
+CIDR - 10.0.2.0/24
+
+5. Create IGW
+Only 1 IGW per VPC
+
+5.1 Attach IGW to VPC
+
+6. Route Table
+A default RT will be created for each VPC
+
+6.1 Create New RT inside VPC
+6.2 Select RT and Edit "Routes"
+	- Add Route table to the IGW
+		- 0.0.0.0/0, IGW
+6.3 Assign Public Subnets to Route Table in "Subnet Associations"
+
+7. Create EC2 under VPC & Public Subnet
+7.1 Assign Public IP
+7.2 SG - Add HTTP & HTTPS
+
+EC2 INSTANCE CAN BE REACHED VIA SSH AND IT CAN ACCESS INTERNET
+
+=================================================================
+
+INTERNET CONNECTION FOR PRIVATE SUBNET INSTANCES
+
+1. EC2 instance
+
+1.1 Create EC2 instance with VPC and Private Subnet
+1.2 Do not assign Public IP
+
+2. Access this EC2 instance via SSH
+
+2.1 Create .pem file in the Public subnet EC2
+2.2 ssh -i "" ubuntu@<private-ip>
+2.3 Internet is not accessible
+
+3. Create Security Group for NAT Instance
+
+4. Create NAT Instance
+4.1 Go to Community AMI, search for nat
+4.2 Select amzn-ami-vpc-nat-hvm instance type
+4.3 Select VPC
+4.4 Select Public Subnet 2 - 2b
+4.5 Dont assign Public IP
+4.6 Assign NAT SG
+
+4. Create Elastic IP
+
+5. Assign Elastic IP to NAT Instance
+
+6. Add HTTP and HTTPS to Inbound in NAT SG
+
+7. Disable "Source/Dest Check" for NAT Instance
+
+8. Go to VPC --> Route Table
+8.1 Select Main Route Table of VPC
+8.2 Add a Route to "Routes" tab (Edit)
+8.3 0.0.0.0/0, NAT Instance
+
+
+8. Go to VPC --> Route Table
+8.1 Create another new RT
+8.2 Select this new RT and add a Route to Routes tab
+8.3 0.0.0.0/0, NAT Instance
+
+
+----------------_DONE!---------------
+
+
+
+
+Manage public bucket policies
+
+Block new public bucket policies (Recommended)
+True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

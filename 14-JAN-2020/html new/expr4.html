@@ -1,0 +1,18 @@
+<html>
+<head><title>Expression evaluation</title>
+<script type="text/javascript">
+function mathexp()
+{
+	var enteredExpr=document.getElementById("expr").value;
+	document.getElementById("result").value=eval(enteredExpr);
+}
+</script>
+</head>
+<body>
+<form name="myform">
+enter any valid expression:<input type="text" id="expr"/><br/><br/>
+<input type="button" value="evaluate" onclick="mathexp()"/><br/><br/>
+Result of the expression:<input type="text" id="result"/><br/><br/>
+</form>
+</body>
+</html>

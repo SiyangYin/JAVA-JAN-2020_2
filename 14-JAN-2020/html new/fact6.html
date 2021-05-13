@@ -1,0 +1,19 @@
+<html>
+<head><script>
+function show(){
+var i,no,fact;
+fact=1;
+no=parseInt(window.prompt("eneter a number"));
+for(i=1;i<=no;i++)
+{
+fact=fact*i;
+}
+document.getElementById("answer").value=fact;
+}
+</script>
+</head>
+<body>
+<input type="button" onclick="show()" value="factorial"></button>
+<input type="text" id="answer">
+</body>
+</html>

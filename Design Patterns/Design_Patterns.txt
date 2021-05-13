@@ -1,0 +1,24 @@
+Creational
+- Factory
+- Abstract Factory
+- Singleton
+- Prototype
+
+Structural
+- Adapter
+- Bridge
+- Composite
+- Decorator
+- Facade
+- Proxy
+
+Behavioral
+- CoR
+- Command
+- Interpreter
+- Iterator
+- Observer
+- State
+- Strategy
+- Template
+- Visitor

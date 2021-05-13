@@ -1,0 +1,52 @@
+<html>
+<head><title>My second program</title>
+<script type="text/javascript">
+function validate()
+{
+     if(document.frm1.txtname.value=="")
+     {
+	alert("Name textbox is empty");
+	document.frm1.txtname.focus();
+	return false;
+	}
+	if(document.frm1.txtemail.value=="")
+	{
+		alert("email textbox is empty");
+		document.frm1.txtemail.focus();
+		return false;
+	}
+	if(document.frm1.txtaddress.value=="")
+	{
+		alert("address textbox is empty");
+		document.frm1.txtaddress.focus();
+		return false;
+	}
+
+return true;
+}
+</script>              
+</head>
+
+<body>
+<form name="frm1" onsubmit="return(validate())">
+<table border="6" align="center">
+<tr>
+<td>Name:</td>
+<td><input type="text"name="txtname" value=""/>
+</tr>
+<tr>
+<td>Email id:</td>
+<td><input type="text"name="txtemail" value=""/>
+</tr>
+<tr>
+<td>Address:</td>
+<td><input type="textarea"name="txtaddress"/>
+</tr>
+<tr>
+<td><input type="submit" value="Submit"/>
+<td><input type="reset" value="Reset"/>
+</tr>
+</table>
+</form>
+</body>
+</html>

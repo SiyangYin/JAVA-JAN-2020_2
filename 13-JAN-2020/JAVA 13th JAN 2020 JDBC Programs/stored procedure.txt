@@ -1,0 +1,13 @@
+
+create table emp522(id int(10), name varchar(200));
+  
+DELIMITER $$
+DROP PROCEDURE IF EXISTS `marlabs4`.`insertN` $$
+CREATE PROCEDURE `marlabs4`.`insertN`
+(IN id INT(10),IN name VARCHAR(200))
+BEGIN
+   insert into emp522(id,name)values(id,name);
+END $$
+
+
+

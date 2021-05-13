@@ -1,0 +1,14 @@
+M----> Model(Java Bean)
+V----> View(JSP)
+C----> Controller(Servlet)
+
+MVC Ingredients
+---------------
+1.) Model---->Result
+
+
+2.) View--->Hello Page & Login Page
+
+3.) Controller--->LoginServlet
+
+Business Service---->LoginService
